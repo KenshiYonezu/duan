@@ -1,0 +1,31 @@
+<div *ngIf="beforeUpload" class="flex flex-col justify-center items-center mt-20">
+    <div class="text-2xl text-green-500 my-10 font-bold">Upload file</div>
+    <div>
+        <label for="uploadfile">Click to upload</label>
+        <input class="hidden" type="file" id="uploadfile" name="uploadfile" (change)="uploaded($event)">
+    </div>
+</div>
+
+<div *ngIf="onUpload" class="flex flex-col justify-center items-center mt-20">
+    <div class="mb-20">
+        <div class="mb-10">
+            File choosed: {{nameFile}}
+        </div>
+        <div>
+            <label class="underline" for="uploadfile">Click to change file</label>
+            <input class="hidden" type="file" id="uploadfile" name="uploadfile" (change)="uploaded($event)">
+        </div>
+    </div>
+    <div class="flex">
+        <button (click)="start()" class="w-60 h-12 rounded bg-green-500 hover:bg-green-700 text-xl text-white outline-none focus:outline-none">Start</button>
+    </div>
+</div>
+
+<div *ngIf="afterUpload" class="h-auto p-5 border-gray-600 border-2 mt-5 ml-5 mr-5">
+    <div class="relative">
+    <a href="" download="" class="absolute right-0 text-blue-600 italic underline">Download</a>
+        <p>Title</p>
+        <p>a</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente quas omnis autem voluptate non ducimus assumenda error rerum laboriosam illum. Sapiente harum aut sed ipsa quas saepe provident? Necessitatibus, magnam.</p>
+    </div>
+</div>

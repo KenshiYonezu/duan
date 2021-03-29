@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FILES } from '../shared'
+import { FilesService } from '../shared'
 
 @Component({
   selector: 'app-pages',
@@ -11,9 +13,11 @@ export class PagesComponent implements OnInit {
   onUpload = false
   afterUpload = false
   nameFile = ''
-  constructor() { }
+  files
 
-  ngOnInit(): void {
+  constructor( private fileService: FilesService ) { }
+
+  async ngOnInit() {
   }
 
   uploaded(event) {
@@ -22,10 +26,11 @@ export class PagesComponent implements OnInit {
     this.nameFile = event.target.files[0].name;
   }
 
-  start() {
+  async start() {
     this.beforeUpload = false;
     this.onUpload = false;
     this.afterUpload = true;
+    this.files = await this.fileService.getFiles();
   }
 
 }

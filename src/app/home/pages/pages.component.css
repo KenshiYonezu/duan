@@ -1,0 +1,7 @@
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd):hover {
+   background-color: rgba(75, 85, 99,1);
+}

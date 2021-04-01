@@ -6,9 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BasicAuthInterceptor, ErrorInterceptor, fakeBackendProvider } from './shared';
 
+import { UserInforComponent } from './user-infor/user-infor.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserInforComponent
   ],
   imports: [
     BrowserModule,

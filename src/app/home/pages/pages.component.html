@@ -1,7 +1,9 @@
 <div *ngIf="beforeUpload" class="flex flex-col justify-center items-center mt-20">
     <div class="text-2xl text-green-500 my-10 font-bold">Upload file</div>
     <div>
-        <label for="uploadfile">Click to upload</label>
+        <label for="uploadfile"><a
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 cursor-pointer md:py-4 md:text-lg md:px-10">
+                Click to upload</a></label>
         <input class="hidden" type="file" id="uploadfile" name="uploadfile" (change)="uploaded($event)">
     </div>
 </div>
@@ -12,21 +14,20 @@
             File choosed: {{nameFile}}
         </div>
         <div>
-            <label class="underline" for="uploadfile">Click to change file</label>
+            <button>Click to change file</button>
             <input class="hidden" type="file" id="uploadfile" name="uploadfile" (change)="uploaded($event)">
         </div>
     </div>
     <div class="flex">
-        <button (click)="start()" class="w-60 h-12 rounded bg-green-500 hover:bg-green-700 text-xl text-white outline-none focus:outline-none">Start</button>
+        <button (click)="start()"
+            class="w-60 h-12 rounded bg-green-500 hover:bg-green-700 text-xl text-white outline-none focus:outline-none">Start</button>
     </div>
 </div>
 <!-- 
 <div *ngIf="afterUpload" class="h-auto p-5 border-gray-600 border-2 mt-5 ml-5 mr-5">
     <div class="relative">
-    <a href="" download="" class="absolute right-0 text-blue-600 italic underline">Download</a>
-        <p>Title</p>
-        <p>a</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente quas omnis autem voluptate non ducimus assumenda error rerum laboriosam illum. Sapiente harum aut sed ipsa quas saepe provident? Necessitatibus, magnam.</p>
+        <a href="" download="" class="absolute right-0 text-blue-600 italic underline">Download</a>
+        <p>Download file o day. Thich thi down khong thich thi down</p>
     </div>
 </div> -->
 
@@ -39,7 +40,7 @@
                 <th colspan="3" class="text-left p-2">Name</th>
                 <th class="text-left p-2">Type</th>
                 <th class="text-left p-2">Size(kb)</th>
-                <th colspan="1" class="p-2"></th>
+                <th colspan="1" class="text-left p-2">File Content</th>
             </tr>
         </thead>
         <tbody>

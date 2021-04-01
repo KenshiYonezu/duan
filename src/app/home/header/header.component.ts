@@ -22,8 +22,14 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
+    if (confirm('Do you want to logout?')) {
+      this.authenticationService.logout();
+      this.router.navigate(['/login']);
+    } else {
+      console.log('Logout action has been cancelled');
+
+    }
+
   }
 
 }
